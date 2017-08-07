@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <!-- TITULO DA PÁGINA -->
+    <title>UOL HOST - Prova FE</title>
+    <!-- /TITULO DA PÁGINA -->
+
+
+    <!-- META TAGS -->
+
+    <!-- DEFAULTS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-Control: max-age=3600, must-revalidate" />
+
+    <!-- GOOGLE -->
+    <meta name="description" content="Painel feito pelo UOL Hosts para a filtragem de clientes." />
+    <meta name="company" content="UOL Host" />
+    <meta name="keywords" content="uol, host, uolhost, painel de controle">
+    <meta name="author" content="UOL Host" />
+    <meta name="copyright" content="UOL Host" />
+    <meta name="application-name" content="UOL Host" />
+    <meta name="Robots" content="all">
+    <meta name="Robots" content="index, follow">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="5">
+    <meta http-equiv="expires" content="0">
+    <!-- /GOOGLE -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:title" content="UOL HOST - Prova FE">
+    <meta property="og:description" content="Painel feito pelo UOL Hosts para a filtragem de clientes.">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="Painel">
+    <meta property="og:site_name" content="UOL Host">
+    <meta property="og:image" content="assets/dist/images/img-default.jpg" />
+    <!-- /FACEBOOK -->
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="UOL HOST - Prova FE" />
+    <meta name="twitter:description" content="Painel feito pelo UOL Hosts para a filtragem de clientes." />
+    <meta name="twitter:image" content="assets/dist/images/img-default.jpg" />
+    <!-- /TWITTER -->
+
+    <!-- /META TAGS -->
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/dist/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/dist/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/dist/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/dist/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/dist/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/dist/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/dist/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/dist/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/dist/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/dist/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/dist/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/dist/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/dist/images/favicon-16x16.png">
+    <link rel="manifest" href="assets/dist/images/manifest.json">
+    <meta name="msapplication-TileColor" content="#1083ad">
+    <meta name="msapplication-TileImage" content="assets/dist/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#1083ad">
+    <!-- /FAVICON -->
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- /FONT AWESOME -->
+
+    <!-- REQUISIÇÃO CSS -->
+    <link rel="stylesheet" href="assets/dist/css/style.min.css">
+    <!-- /REQUISIÇÃO CSS -->
+
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+    <header class="header-main">
+        <section class="header-main-inner">
+            <div class="wrapper flex-grid halign-left">
+                <!-- LOGO DA UOL -->
+                <figure class="flex-grid halign-center is-md">
+                    <img src="assets/dist/images/logo-uol.png" alt="Logo UOL Host">
+                </figure>
+                <!-- /LOGO DA UOL -->
+            </div>
+        </section>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- CONTEUDO PRINCIPAL -->
+    <main class="wrapper pd-30--top pd-30--bottom">
+
+        <!-- TÍTULO -->
+        <h1 class="title-main text--md">Painel de Clientes</h1>
+        <!-- /TÍTULO -->
+
+        <!-- SUBTITULO E BOTÃO PARA ADICIONAR NOVOS CLIENTES -->
+        <section class="flex-grid--wrap halign-between valign-middle mg-20--bottom">
+            <h2 class="subtitle-main">Clientes</h2>
+            <button class="btn btn--first">Novo Cliente</button>
+        </section>
+        <!-- /SUBTITULO E BOTÃO PARA ADICIONAR NOVOS CLIENTES -->
+
+
+        <!-- INPUT DE BUSCA -->
+        <form action="" class="form flex-grid--wrap mg-20--bottom" onsubmit="return false;">
+            <span class="col-12 font-big">Buscar</span>
+            <div class="col-4 flex-grid is-md">
+                <input class="input col" type="search" id="input" placeholder="Busca por nome ou email..." value="" maxlength="50">
+                <button type="" id="search-button" class="search-button"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+        </form>
+        <!-- /INPUT DE BUSCA -->
+
+        <!--LISTA DE USUARIOS -->
+        <ul class="user-list"></ul>
+        <!-- /LISTA DE USUARIOS -->
+
+        <!-- RESULTADO DA BUSCA E PAGINAÇÃO -->
+        <section class="flex-grid--wrap halign-between">
+            <span class="font-big text--md is-md mg-10--top mg-10--bottom">Exibindo <strong>9</strong> de <strong>9</strong> resultados</span>
+
+            <ul class="pagination flex-grid is-md halign-center">
+                <li class="pagination-item">
+                    <a href="" class="pagination-link" title="Primeira Página"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
+                </li>
+                <li class="pagination-item">
+                    <a href="" title="Página Anterior" class="pagination-link"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                </li>
+                <li class="pagination-item">
+                    <a href="" title="1" class="pagination-link active">1</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="" title="2" class="pagination-link">2</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="" title="Próxima Página" class="pagination-link"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                </li>
+                <li class="pagination-item">
+                    <a href="" class="pagination-link" title="Última Página"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </section>
+        <!-- /RESULTADO DA BUSCA E PAGINAÇÃO -->
+
+    </main>
+    <!-- /CONTEUDO PRINCIPAL -->
+
+
+    <!-- REQUISIÇÃO JAVASCRIPT -->
+    <script src="assets/dist/js/main.min.js" type="text/javascript"></script>
+    <!-- /REQUISIÇÃO JAVASCRIPT -->
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+/*DISPLAY*/
+
+@mixin module-display {
+    // DISPLAY HIDDEN
+    .hidden {
+        display: none;
+    }
+    @each $tag in $tag-responsive {
+        @media (max-width: nth($width-responsive, index($tag-responsive, $tag))) {
+            .hidden--#{$tag}, .hidden--#{$tag}[class*="flex-grid"] {
+                display: none;
+            }
+        }
+    }
+    // DISPLAY BLOCK
+    .block {
+        display: block;
+    }
+    @each $tag in $tag-responsive {
+        @media (max-width: nth($width-responsive, index($tag-responsive, $tag))) {
+            .hidden--#{$tag}, .hidden--#{$tag}[class*="flex-grid"] {
+                display: block;
+            }
+        }
+    }
+}
+
+
+/* /DISPLAY*/

@@ -1,0 +1,47 @@
+/*RESET CSS*/
+
+@mixin module-reset {
+    * {
+        @extend .font-first;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        list-style: none;
+        vertical-align: baseline;
+        outline: 0;
+        box-sizing: border-box;
+    }
+    html,
+    body {
+        //FLEXBOX IOS
+        width: 100%;
+    }
+    body {
+        @include fontSize(14px);
+        overflow-x: hidden;
+        line-height: 24px;
+    }
+    iframe {
+        display: block;
+    }
+    textarea {
+        resize: none;
+    }
+    a {
+        text-decoration: none;
+        transition: linear 0.2s all;
+    }
+    p {
+        color: #585858;
+        @include lineHeight(18px);
+    }
+    img {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+}
+
+
+/* /RESET CSS*/

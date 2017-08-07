@@ -1,0 +1,36 @@
+/*!
+Site Name: Teste Front-End UOL
+Description: Teste feito para a vaga de desenvolvedor Front-End na UOL
+Author: Matheus Volpe Barone
+Author URL: http://www.matheusbarone.com
+Version: 1.0
+!*/
+
+
+/* FRAMEWORK */
+
+@import '_frame';
+
+/* REGRAS GERAIS */
+
+@import '_classes';
+
+/* REGRAS DE LAYOUT */
+
+@import '_layout';
+
+/* REGRAS DE CONTEÚDO */
+
+@import '_content';
+
+/* REGRAS IMPORTANT */
+
+@import '_important';
+
+/* REGRAS PARA O RESPONSIVO */
+
+@import '_responsive';
+
+/* MEDIA QUERIES */
+
+@import '_queries';

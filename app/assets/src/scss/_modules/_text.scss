@@ -1,0 +1,89 @@
+/*TEXT*/
+
+@mixin module-text {
+    .text {
+        text-decoration: none;
+        &-left {
+            text-align: left;
+        }
+        &-center {
+            text-align: center;
+        }
+        &-right {
+            text-align: right;
+        }
+        &-justify {
+            text-align: justify;
+        }
+        &-underline {
+            text-decoration: underline;
+        }
+        &-nodecoration {
+            text-decoration: none;
+        }
+        &-uppercase {
+            text-transform: uppercase;
+        }
+        //RESPONSIVE TEXT
+        @each $tag in $tag-responsive {
+            @media (max-width: nth($width-responsive, index($tag-responsive, $tag))) {
+                &--#{$tag} {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .font {
+        &-biggest {
+            @include fontSize(28px);
+            @include lineHeight(26px);
+        }
+        &-big {
+            @include fontSize(16px);
+        }
+        &-normal {
+            @include fontSize(14px);
+            @include lineHeight(13px);
+        }
+        &-small {
+            @include fontSize(12px);
+        }
+        &-smaller {
+            font-size: 0.750em;
+        }
+        @for $i from 20 through 100 {
+            @if $i % 2==0 {
+                &-#{$i},
+                &-#{$i}.fa {
+                    @include fontSize($i * 1px);
+                }
+            }
+        }
+    }
+    .bold {
+        font-weight: bolder;
+    }
+    .normal {
+        font-weight: 400;
+    }
+    .light {
+        font-weight: lighter;
+    }
+    .color {
+        &-white {
+            color: white;
+        }
+        &-black {
+            color: black;
+        }
+        //NORMAL
+        @each $type in $type-status {
+            &-#{$type} {
+                color: nth($color-status, index($type-status, $type));
+            }
+        }
+    }
+}
+
+
+/* /TEXT*/

@@ -1,0 +1,20 @@
+//HOME
+@mixin listagem--sm {
+    .user-list-name,
+    .user-list-mail {
+        @include lineHeight(14px);
+    }
+    .user-list-name {
+        margin-bottom: 10px;
+        @include fontSize(14px);
+    }
+    .user-list-condition {
+        padding: 5px 0;
+    }
+    .user-list-mail,
+    .user-list-description {
+        @include fontSize(13px);
+    }
+}
+
+// /HOME

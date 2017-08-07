@@ -1,0 +1,15 @@
+/*BACKGROUNDS*/
+    @mixin module-background {
+        .bg {
+            &-white {
+                background: white;
+            }  
+            //NORMAL
+            @each $type in $type-status {
+                &-#{$type} {
+                    background: nth($color-status, index($type-status, $type));
+                }
+            }
+        }
+    }
+/* /BACKGROUNDS*/

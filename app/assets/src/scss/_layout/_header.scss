@@ -1,0 +1,12 @@
+//HEADER
+.header-main {
+    padding: 35px 0;
+    @extend .bg-first;
+    >.header-main-inner {
+        padding: 10px 0;
+        background: #2d8ab0;
+        background: linear-gradient(to bottom, #2d8ab0 0%, #0c749a 100%);
+    }
+}
+
+// /HEADER

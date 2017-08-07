@@ -1,0 +1,110 @@
+/*BUTTONS*/
+
+@mixin module-button {
+    .btn,
+    [class*="btn--"] {
+        transition: ease-in-out 0.2s all;
+        @extend .font-first;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        &[disabled] {
+            cursor: not-allowed;
+            opacity: .5;
+        }
+        &:not([disabled]) {
+            cursor: pointer;
+        }
+        &.btn-small {
+            @include fontSize(11px);
+            padding: 5px 14px;
+        }
+        &:not(.btn-small):not(.btn-big) {
+            min-height: 38px;
+            display: block;
+            padding: 4px 20px;
+            @include fontSize(14px);
+            line-height: 30px;
+        }
+        &.btn-big {
+            padding: 15px 40px;
+            font-size: 16px;
+        }
+        &:not(.btn-noradius) {
+            border-radius: 4px;
+        }
+        &.btn-gradient {
+            overflow: hidden;
+        }
+        .fa {
+            &.fa-right {
+                margin-left: 10px;
+            }
+            &.fa-left {
+                margin-right: 10px;
+            }
+        }
+    }
+    .btn {
+        transition: ease-in-out 0.2s all;
+        color: #fff;
+        background: $gray-color;
+        &:not([disabled]):hover,
+        &.active,
+        &[data-active="true"] {
+            background: lighten($gray-color, 10%);
+        }
+        &--white {
+            color: gray;
+            background: white;
+            &:not([disabled]):hover,
+            &.active,
+            &[data-active="true"] {
+                background: lightgray;
+            }
+        }
+        //NORMAL
+        @each $type in $type-status {
+            &--#{$type} {
+                color: #fff;
+                &:not(.btn-gradient) {
+                    background: nth($color-status, index($type-status, $type));
+                    &:before {
+                        transition: ease-in-out 0.2s all;
+                        content: "";
+                        position: absolute;
+                        bottom: 0px;
+                        left: 0;
+                        border-radius: 0 0 4px 4px;
+                        height: 3px;
+                        width: 100%;
+                        background: darken($first-color, 10%);
+                    }
+                }
+                &.btn-gradient {
+                    background: linear-gradient(to bottom, nth($color-status, index($type-status, $type)), darken(nth($color-status, index($type-status, $type)), 10%));
+                }
+                &:not([disabled]):hover,
+                &.active,
+                &[data-active="true"] {
+                    &:not(.btn-gradient) {
+                        background: lighten(nth($color-status, index($type-status, $type)), 10%);
+                        transform: translateY(3px) scale(1.1);
+                        box-shadow: 0px -3px 9px 0px rgba(0, 0, 0, 0.42);
+                        &:before {
+                            height: 0;
+                            bottom: 3px;
+                        }
+                    }
+                    &.btn-gradient {
+                        background: linear-gradient(to top, nth($color-status, index($type-status, $type)), darken(nth($color-status, index($type-status, $type)), 10%));
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* /BUTTONS*/

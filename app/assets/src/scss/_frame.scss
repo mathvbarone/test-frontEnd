@@ -1,0 +1,102 @@
+/*
+----------------------------------------------
+Framework Name: Simple Framework
+By: Matheus Barone
+By Url: http://www.matheusbarone.com
+----------------------------------------------
+*/
+
+
+/*COMPONENTS*/
+
+@import '_modules/_config';
+@import '_modules/_font';
+@import '_modules/_variables';
+@import '_modules/_reset';
+@import '_modules/_normalize';
+
+/* MÓDULO RESET */
+
+@if $reset==true {
+    @include module-reset;
+}
+
+
+/* MÓDULO BACKGROUND */
+
+@import '_modules/_background';
+@if $background==true {
+    @include module-background;
+}
+
+
+/* MÓDULO BUTTON */
+
+@import '_modules/_button';
+@if $button==true {
+    @include module-button;
+}
+
+
+/* MÓDULO FORM */
+
+@import '_modules/_form';
+@if $form==true {
+    @include module-form;
+}
+
+
+/* MÓDULO LINK */
+
+@import '_modules/_link';
+@if $link==true {
+    @include module-link;
+}
+
+
+/* MÓDULO TEXT */
+
+@import '_modules/_text';
+@if $text==true {
+    @include module-text;
+}
+
+
+/* MÓDULO DISPLAY */
+
+@import '_modules/_display';
+@if $display==true {
+    @include module-display;
+}
+
+
+/* MÓDULO MARGIN */
+
+@import '_modules/_margin';
+@if $margin==true {
+    @include module-margin;
+}
+
+
+/* MÓDULO PADDING */
+
+@import '_modules/_padding';
+@if $padding==true {
+    @include module-padding;
+}
+
+
+/* MÓDULO GRID */
+
+@import '_modules/_grid';
+@if $grid==true {
+    @include module-grid;
+}
+
+
+/* MÓDULO RESPONSIVE */
+
+@import '_modules/_responsive';
+@if $responsive==true {
+    @include module-responsive;
+}

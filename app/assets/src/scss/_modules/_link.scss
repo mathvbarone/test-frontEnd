@@ -1,0 +1,67 @@
+/*LINKS*/
+
+@mixin module-link {
+    .link,
+    [class*="link--"] {
+        position: relative;
+        text-decoration: none;
+        word-break: break-all;
+        transition: linear 0.2s all;
+        &:hover:before,
+        &.active:before,
+        &[data-active="true"]:before {
+            width: 100%;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            width: 0;
+            transition: width .2s ease-in;
+        }
+        @each $tag in $tag-responsive {
+            @media (max-width: nth($width-responsive, index($tag-responsive, $tag))) {
+                &-#{$tag} {
+                    &:before, &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .link {
+        color: #000;
+        >.fa {
+            transition: linear 0.2s all;
+            &-right {
+                margin-left: 10px;
+            }
+            &-left {
+                margin-right: 10px;
+            }
+        }
+        &:before {
+            background: $first-color;
+        }
+        &--white {
+            color: white;
+            &:before {
+                background: white;
+            }
+        }
+        @each $type in $type-status {
+            &--#{$type} {
+                color: nth($color-status, index($type-status, $type));
+                &:before {
+                    background: nth($color-status, index($type-status, $type));
+                }
+            }
+        }
+    }
+}
+
+
+/* /LINKS*/

@@ -1,0 +1,26 @@
+/*PAGINACAO*/
+
+.pagination {
+    margin: 10px 0;
+    >.pagination-item {
+        >.pagination-link {
+            text-align: center;
+            color: $first-color;
+            display: block;
+            border: 1px solid gainsboro;
+            height: 30px;
+            @include lineHeight(30px);
+            @include fontSize(14px);
+            width: 26px;
+            &.active,
+            &:hover {
+                color: #fff;
+                border: 1px solid $second-color;
+                background-color: $second-color;
+            }
+        }
+    }
+}
+
+
+/* /PAGINACAO*/
